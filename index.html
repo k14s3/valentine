@@ -13,27 +13,16 @@
             font-family: Arial, sans-serif;
         }
 
-        p {
+        #question {
             color: white;
-            font-size: 24px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         #valentineImage {
-            display: none;
-        }
-
-        #notAnOptionMessage {
-            display: none;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
+            display: block;
+            max-width: 50%;
+            margin: 0 auto;
         }
 
         #buttonsContainer {
@@ -41,27 +30,45 @@
         }
 
         button {
-            font-size: 18px;
+            font-size: 24px;
             padding: 10px 20px;
             margin: 0 10px;
+        }
+
+        #notAnOptionMessage {
+            display: none;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #heartImage {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <p>Will you be my valentine?</p>
-    <img id="valentineImage" src="valentine.jpg" alt="Valentine Image">
+    <div id="question">Will you be my valentine?</div>
 
-    <div id="notAnOptionMessage">Not an option, only there for decoration. Please try again.</div>
+    <img id="valentineImage" src="valentine.jpg" alt="Valentine Image">
 
     <div id="buttonsContainer">
         <button onclick="showNotAnOptionMessage()">No</button>
         <button onclick="showHeartImage()">Yes</button>
     </div>
 
+    <div id="notAnOptionMessage">Not an option, only there for decoration. Please try again.</div>
+
+    <img id="heartImage" src="heart.jpg" alt="Heart Image">
+
     <script>
         function showNotAnOptionMessage() {
             document.getElementById('notAnOptionMessage').style.display = 'block';
+            document.getElementById('heartImage').style.display = 'none';
         }
 
         function showHeartImage() {
@@ -70,8 +77,6 @@
             document.getElementById('heartImage').style.display = 'block';
         }
     </script>
-
-    <img id="heartImage" src="heart.jpg" alt="Heart Image">
 </body>
 
 </html>
