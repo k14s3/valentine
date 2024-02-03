@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            background-color: #ffcccc; /* Lighter red background */
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #question {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #valentineImage {
+            display: block;
+            max-width: 50%;
+            margin: 0 auto;
+        }
+
+        #buttonsContainer {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        #notAnOptionMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #heartImage {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question">Emilio, will you be my valentine?</div>
+
+    <img id="valentineImage" src="valentine.jpg" alt="Valentine Image">
+
+    <div id="buttonsContainer">
+        <button onclick="showNotAnOptionMessage()">No</button>
+        <button onclick="showHeartImage()">Yes</button>
+    </div>
+
+    <div id="notAnOptionMessage">Not an option, only there for decoration. Please try again.</div>
+
+    <img id="heartImage" src="heart.jpg" alt="Heart Image">
+
+    <script>
+        function showNotAnOptionMessage() {
+            document.getElementById('notAnOptionMessage').style.display = 'block';
+            document.getElementById('heartImage').style.display = 'none';
+            document.getElementById('valentineImage').style.display = 'block';
+        }
+
+        function showHeartImage() {
+            document.getElementById('notAnOptionMessage').style.display = 'none';
+            document.getElementById('valentineImage').style.display = 'none';
+            document.getElementById('heartImage').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
